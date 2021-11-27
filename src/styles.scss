@@ -1,1 +1,137 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Niconne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+$bg-primary: #03b2cb;
+$bg-secondary: #03b2cb;
+// $bg-secondary: rgba(233, 240, 240, 0.9);
+$primary-color: whitesmoke;
+$secondary-color: rgba(0, 0, 0, 0.6);
+$body-primary: whitesmoke;
+$h1-font: 24px;
+$h2-font: 20px;
+$first-font: 18px;
+$secondary-font: 16px;
+html,
+body {
+  height: 100%;
+  width: 100vw !important;
+}
+
+table.table {
+  color: $primary-color;
+}
+
+body {
+  background: rgb(0, 25, 54);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 25, 54, 1) 0%,
+    rgba(3, 178, 203, 1) 50%,
+    rgba(0, 25, 54, 1) 100%
+  );
+  color: $body-primary;
+  margin: 0 auto;
+}
+
+// p {
+//     font-family: 'Niconne', cursive;
+//     font-size: 2em;
+//     letter-spacing: 0.1em;
+//     text-align: justify;
+//     margin: 5px 10px;
+// }
+
+h1 {
+  font-size: $h1-font;
+}
+
+h2 {
+  font-size: $h2-font;
+}
+
+// .container,
+// .container-fluid,
+// .container-xxl,
+// .container-xl,
+// .container-lg,
+// .container-md,
+// .container-sm {
+//   padding: 0 !important;
+// }
+
+.header {
+  background-color: $bg-secondary;
+  // width: 100%;
+  height: 3em;
+  line-height: 3em;
+  margin: 0 0 10px 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  ul {
+    list-style-type: none;
+    display: flex;
+    li a {
+      color: $primary-color;
+      font-size: $h1-font;
+      font-weight: bold;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+      padding: 1em;
+      transition: 0.4s;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      color: $secondary-color;
+      // transform: translateY(0) scale(2);
+    }
+  }
+  span {
+    display: flex;
+    padding-right: 10px;
+    a {
+      color: $primary-color;
+      font-size: $h1-font;
+      font-weight: bold;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+      // margin: 1em;
+      transition: 0.4s;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $secondary-color;
+      // transform: translateY(0) scale(1.3);
+    }
+  }
+}
+
+.footer {
+  @extend .header;
+  margin: 0;
+  clear: both;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

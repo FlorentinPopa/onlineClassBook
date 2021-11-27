@@ -1,0 +1,91 @@
+.form-control:focus,
+.custom-select:focus {
+  border: 1px solid red;
+}
+
+table {
+  width: 100%;
+}
+
+label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+}
+.custom-select {
+  height: auto;
+  padding: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 400;
+  color: #222222;
+  background-color: #fdfdfd;
+  border: 1px solid #312bc6;
+}
+
+@mixin mat-table-columns($columns) {
+  .mat-column- {
+    @each $colName, $props in $columns {
+      $width: map-get($props, "width");
+
+      &#{$colName} {
+        flex: $width;
+        min-width: $width;
+
+        @if map-has-key($props, "color") {
+          color: map-get($props, "color");
+        }
+        @if map-has-key($props, "padding") {
+          padding: map-get($props, "padding");
+        }
+      }
+    }
+  }
+}
+
+@include mat-table-columns(
+  (
+    id: (
+      width: 0.7rem,
+      color: goldenrod,
+    ),
+    name: (
+      width: 12rem,
+      padding: 10px 20px,
+    ),
+    email: (
+      width: 14rem,
+    ),
+  )
+);
+
+.hide {
+  display: none;
+}
+
+:host ::ng-deep .clsForm .mat-button.mat-success,
+.mat-stroked-button.mat-success {
+  margin-left: 3.8vw;
+  margin-top: 5px;
+  padding: 0 0.75em 0 0.75em;
+  color: whitesmoke;
+  transition: 0.3s;
+  border: 2px solid goldenrod;
+  font-size: 1.85em;
+}
+.mat-button.mat-success:hover,
+.mat-stroked-button.mat-success:hover {
+  background-color: goldenrod;
+}
+
+// ::ng-deep .mat-stroked-button {
+//   height: 66px;
+//   width: 20vw;
+
+// }
+
+.logBut {
+  width: 24.3vw;
+  height: 66px;
+}

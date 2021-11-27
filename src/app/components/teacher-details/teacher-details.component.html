@@ -1,0 +1,71 @@
+<form>
+  <!-- <p>Profesor Nr : {{teacher.id}}</p> -->
+  <div class="row">
+    <div class="col-10">
+      <mat-form-field appearance="legacy">
+        <mat-label>Nume Prenume</mat-label>
+        <input
+          [(ngModel)]="teacher.name"
+          name="name"
+          matInput
+          placeholder="Ex. Dinca Roxana"
+        />
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <mat-form-field appearance="legacy">
+          <mat-label>Materie</mat-label>
+          <input
+            [(ngModel)]="teacher.materie"
+            name="materie"
+            matInput
+            placeholder="Ex. Romana"
+          />
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <mat-form-field appearance="legacy">
+          <mat-label>E-mail</mat-label>
+          <!-- <mat-icon matPrefix>alternate_email</mat-icon> -->
+          <input
+            [(ngModel)]="teacher.email"
+            name="email"
+            matInput
+            placeholder="Ex. dincaroxana@email.com"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <mat-form-field appearance="legacy">
+          <mat-label>Parola</mat-label>
+          <input
+            [(ngModel)]="teacher.password"
+            name="password"
+            matInput
+            placeholder="Ex. parolamea123"
+          />
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <button mat-stroked-button color="success" (click)="update()">
+    Update teacher {{teacher.id}} !
+  </button>
+</form>
+
+<!-- 
+<p>Profesor Nr : {{teacher.id}}</p>
+<p>Nume : <input [(ngModel)]="teacher.name" /></p>
+<p>Materie : <input [(ngModel)]="teacher.materie" /></p>
+<p>Email : <input [(ngModel)]="teacher.email" /></p>
+<p>Parola : <input [(ngModel)]="teacher.password" /></p>
+
+<button (click)="update()">Update</button> -->

@@ -1,0 +1,155 @@
+<div class="row w-100">
+  <div class="row m-3">
+    <div class="col-3 m-3">
+      <button
+        mat-stroked-button
+        color="success"
+        class="logBut clsForm"
+        (click)="showCls()"
+      >
+        Adauga o clasa
+      </button>
+    </div>
+    <div class="col-3 m-3">
+      <button
+        mat-stroked-button
+        color="success"
+        class="logBut clsForm"
+        (click)="showAssign()"
+      >
+        Atribuie elev la clasa
+      </button>
+    </div>
+  </div>
+  <div class="row m-3">
+    <div class="col-12">
+      <ng-container *ngIf="clsVisible">
+        <form>
+          <div class="form-group row">
+            <div class="col-sm-4">
+              <input
+                type="text"
+                [(ngModel)]="clsName"
+                name="clsName"
+                class="form-control form-control-lg"
+                id="classroomName"
+                placeholder="Adauga nume clasa"
+              />
+            </div>
+            <div class="col-auto">
+              <button
+                type="submit"
+                class="mx-1 btn btn-danger btn-lg btn-block"
+                (click)="addNewClassRoom()"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </ng-container>
+      <ng-container *ngIf="detailsVisible">
+        <form [formGroup]="clsDetails" (ngSubmit)="assignDetails()">
+          <select class="mx-1 custom-select" (change)="changeStudent($event)">
+            <option value="">Chose a student</option>
+            <option *ngFor="let student of std" [value]="student.id"
+              >{{student.nume}}
+            </option>
+          </select>
+          <select class="mx-1 custom-select" (change)="changeCls($event)">
+            <option value="">Chose a classroom</option>
+            <option *ngFor="let cls of clsNameArr" [value]="cls.nume"
+              >{{cls.nume}}
+            </option>
+          </select>
+          <select class="mx-1 custom-select" (change)="changeTch($event)">
+            <option value="">Chose a Teacher</option>
+            <option *ngFor="let teacher of tch" [value]="teacher.id"
+              >{{teacher.name}}
+            </option>
+          </select>
+          <button type="submit" class="mx-1 btn btn-danger btn-lg btn-block">
+            Submit
+          </button>
+        </form>
+      </ng-container>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="col-8">
+        <table
+          mat-table
+          #table
+          [dataSource]="classList"
+          matSort
+          class="mat-elevation-z8"
+        >
+          <!-- <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+            <td mat-cell *matCellDef="let cls">{{cls.id}}</td>
+          </ng-container> -->
+
+          <ng-container matColumnDef="numeClasa">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Nume Clasa
+            </th>
+            <td mat-cell *matCellDef="let cls">{{cls.numeClasa}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="numeElev">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nume Elev</th>
+            <td mat-cell *matCellDef="let cls">{{cls.nume}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="numeProfesor">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Nume Profesor
+            </th>
+            <td mat-cell *matCellDef="let cls">{{cls.name}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let cls">
+              <button mat-icon-button color="warn">
+                <mat-icon>delete_outline</mat-icon>
+              </button>
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="loading">
+            <mat-footer-cell *matFooterCellDef colspan="6">
+              Loading data...
+            </mat-footer-cell>
+          </ng-container>
+          <ng-container matColumnDef="noData">
+            <mat-footer-cell *matFooterCellDef colspan="6">
+              No data.
+            </mat-footer-cell>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr
+            mat-row
+            *matRowDef="let row; columns: displayedColumns; let i = index;"
+          ></tr>
+          <mat-footer-row
+            *matFooterRowDef="['loading']"
+            [ngClass]="{'hide':classList!=null}"
+          ></mat-footer-row>
+          <mat-footer-row
+            *matFooterRowDef="['noData']"
+            [ngClass]="{'hide':!(classList!=null && classList.data.length==0)}"
+          ></mat-footer-row>
+        </table>
+        <mat-paginator
+          #paginator
+          [length]="classList.data.length"
+          [pageIndex]="0"
+          [pageSize]="5"
+          [pageSizeOptions]="[5, 10]"
+        >
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

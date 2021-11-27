@@ -1,0 +1,88 @@
+<form>
+  <!-- <p>Profesor Nr : {{student.id}}</p> -->
+  <div class="row">
+    <div class="col-10">
+      <mat-form-field appearance="legacy">
+        <mat-label>Nume Prenume</mat-label>
+        <input
+          [(ngModel)]="student.nume"
+          name="name"
+          matInput
+          placeholder="Ex. Grigore Ureche"
+        />
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <mat-form-field appearance="legacy">
+          <mat-label>E-mail</mat-label>
+          <!-- <mat-icon matPrefix>alternate_email</mat-icon> -->
+          <input
+            [(ngModel)]="student.email"
+            name="email"
+            matInput
+            placeholder="Ex. grigoreureche@email.com"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <mat-form-field appearance="legacy">
+          <mat-label>Parola</mat-label>
+          <input
+            [(ngModel)]="student.password"
+            name="password"
+            matInput
+            placeholder="Ex. parolamea123"
+          />
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <button mat-stroked-button color="success" (click)="update()">
+    Update student {{student.id}} !
+  </button>
+</form>
+
+<!-- <div class="container custom-container">
+    <div class="col-md-12">
+      
+      <h3 class="mb-3 text-center">Update Employee</h3>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="student.name" class="form-control" placeholder="Name">
+      </div>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="student.address" class="form-control" placeholder="Address">
+      </div>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="student.city" class="form-control" placeholder="City">
+      </div>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="student.state" class="form-control" placeholder="State">
+      </div>
+
+      <div class="form-group">
+        <input type="text" [(ngModel)]="student.country" class="form-control" placeholder="Country">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" (click)="update()">Update student</button>
+      </div>
+      
+    </div>
+  </div> -->
+
+<!-- <p>Student No : {{student.id}}</p>
+<p>Nume : <input [(ngModel)]="student.nume" /></p>
+<p>Email : <input [(ngModel)]="student.email" /></p>
+<p>password : <input [(ngModel)]="student.password" /></p>
+<p>state     : <input [(ngModel)]="student.state"></p>
+<p>country     : <input [(ngModel)]="student.country"></p> -->
+
+<!-- <button (click)="update()">Update</button> -->

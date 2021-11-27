@@ -1,0 +1,25 @@
+.card-header {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-align: justify;
+  height: 62px;
+}
+
+.card-body {
+  height: 175px;
+}
+
+.p-content {
+  @extend .card-header;
+  font-size: 18px;
+  text-align: justify;
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+.card-footer {
+  height: 42px;
+}

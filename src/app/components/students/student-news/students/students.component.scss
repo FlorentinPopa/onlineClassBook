@@ -1,0 +1,52 @@
+table {
+  width: 100%;
+}
+
+.mat-paginator {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  padding: 5px 10px;
+}
+
+td.mat-cell {
+  padding: 5px 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.mat-snack-bar-container {
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  margin: 24px;
+  max-width: 33vw;
+  min-width: 344px;
+  padding: 14px 16px;
+  min-height: 48px;
+  transform-origin: center;
+  color: hsla(0, 0%, 100%, 0.7);
+  background: #323232;
+}
+
+.mat-button.mat-success,
+.mat-stroked-button.mat-success {
+  margin-top: 15px;
+  padding: 5px 10px;
+  color: whitesmoke;
+  transition: 0.3s;
+  border: 2px solid goldenrod;
+}
+.mat-button.mat-success:hover,
+.mat-stroked-button.mat-success:hover {
+  background-color: goldenrod;
+}

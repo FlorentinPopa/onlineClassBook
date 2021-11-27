@@ -1,0 +1,171 @@
+h1 {
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 4.8em;
+  cursor: default;
+}
+
+.example-form {
+  min-width: 250px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  cursor: default;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+/* Rules for sizing the icon. */
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
+}
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.margin-form {
+  margin-right: 30px !important;
+}
+
+ul {
+  list-style-type: none;
+  li {
+    margin-top: 1.7em;
+  }
+  li span.text {
+    cursor: default;
+    margin-left: 5px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 32px;
+    vertical-align: top;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  }
+}
+
+.login {
+  font-family: "Allerta Stencil", sans-serif !important;
+  font-size: 32px;
+  color: goldenrod;
+}
+.borderX {
+  border-top: 5px double goldenrod;
+  border-bottom: 5px double goldenrod;
+}
+
+:host ::ng-deep .homeForm {
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+  }
+  mat-form-field {
+    .mat-hint,
+    input,
+    ::placeholder,
+    .mat-form-field-label {
+      color: whitesmoke;
+    }
+  }
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: goldenrod !important;
+  }
+
+  .mat-form-field {
+    .mat-form-field-infix {
+      height: 66px;
+      width: 20vw;
+    }
+  }
+  .mat-form-field {
+    margin-left: 3.8vw;
+  }
+}
+
+/* input color class */
+:host ::ng-deep .homeForm input.mat-input-element {
+  color: rgba(0, 0, 0, 0.6) !important;
+  font-size: 1.1rem;
+}
+
+/* Change label color on focused */
+:host ::ng-deep .homeForm .mat-form-field.mat-focused .mat-form-field-label {
+  color: whitesmoke !important;
+  font-weight: bolder;
+}
+
+:host ::ng-deep .homeForm .mat-button.mat-success,
+.mat-stroked-button.mat-success {
+  margin-left: 3.8vw;
+  margin-top: 5px;
+  padding: 0 0.75em 0 0.75em;
+  color: whitesmoke;
+  transition: 0.3s;
+  border: 2px solid goldenrod;
+  font-size: 1.85em;
+}
+.mat-button.mat-success:hover,
+.mat-stroked-button.mat-success:hover {
+  background-color: goldenrod;
+}
+
+// ::ng-deep .mat-stroked-button {
+//   height: 66px;
+//   width: 20vw;
+
+// }
+
+.logBut {
+  width: 24.3vw;
+  height: 66px;
+}

@@ -1,0 +1,65 @@
+<form>
+  <div class="row">
+    <div class="col-10">
+      <mat-form-field appearance="legacy">
+        <mat-label>Nume Prenume</mat-label>
+        <input
+          [(ngModel)]="teacherDetails.name"
+          name="name"
+          matInput
+          placeholder="Ex. Dinca Roxana"
+        />
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <mat-hint>This field is required!</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <mat-form-field appearance="legacy">
+          <mat-label>Materie</mat-label>
+          <input
+            [(ngModel)]="teacherDetails.materie"
+            name="password"
+            matInput
+            placeholder="Ex. parolamea123"
+          />
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+          <mat-hint>This field is required!</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <mat-form-field appearance="legacy">
+          <mat-label>E-mail</mat-label>
+          <!-- <mat-icon matPrefix>alternate_email</mat-icon> -->
+          <input
+            [(ngModel)]="teacherDetails.email"
+            name="email"
+            matInput
+            placeholder="Ex. dincaroxana@email.com"
+          />
+          <mat-hint>This field is required!</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <mat-form-field appearance="legacy">
+          <mat-label>Parola</mat-label>
+          <input
+            [(ngModel)]="teacherDetails.password"
+            name="password"
+            matInput
+            placeholder="Ex. parolamea123"
+          />
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+          <mat-hint>This field is required!</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <button mat-stroked-button color="success" (click)="addTeacher()">
+    Add new Teacher
+  </button>
+</form>

@@ -1,0 +1,41 @@
+.mat-form-field {
+  width: 100%;
+  max-width: 250px !important;
+}
+
+/* input color class */
+::ng-deep input.mat-input-element {
+  color: whitesmoke !important;
+}
+
+::ng-deep .mat-input-element::placeholder {
+  color: whitesmoke !important;
+}
+
+::ng-deep .mat-form-field-label {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Change label color on focused */
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: rgba(0, 0, 0, 0.6) !important;
+  font-weight: bolder;
+}
+
+/* underline border color on focused */
+::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple {
+  background-color: goldenrod !important;
+}
+
+.mat-button.mat-success,
+.mat-stroked-button.mat-success {
+  margin-top: 15px;
+  padding: 5px 10px;
+  color: whitesmoke;
+  transition: 0.3s;
+  border: 2px solid goldenrod;
+}
+.mat-button.mat-success:hover,
+.mat-stroked-button.mat-success:hover {
+  background-color: goldenrod;
+}

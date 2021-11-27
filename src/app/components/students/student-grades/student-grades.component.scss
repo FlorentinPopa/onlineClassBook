@@ -1,0 +1,29 @@
+.hide {
+  display: none;
+}
+
+tr#studentName {
+  //   border-bottom: 5px solid inherit;
+  th {
+    // border-bottom: 5px solid goldenrod;
+    text-align: center;
+    font-weight: bold;
+    color: goldenrod;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+}
+
+.tableHeader {
+  background-color: whitesmoke;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+.tableHeader {
+  @extend .tableHeader;
+  color: goldenrod;
+}
