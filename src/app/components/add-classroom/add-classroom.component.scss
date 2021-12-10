@@ -1,3 +1,11 @@
+.div-button {
+  margin: 5px 10px;
+}
+
+.divbox {
+  height: 50px;
+}
+
 .form-control:focus,
 .custom-select:focus {
   border: 1px solid red;
@@ -64,28 +72,69 @@ label {
   display: none;
 }
 
+:host ::ng-deep .mat-flat-button {
+  padding: 0.75em 0.75em 0 0.75em;
+  min-width: 130px;
+  font-weight: 400;
+  line-height: 2.5;
+  border-radius: 3px 3px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Allerta Stencil", sans-serif !important;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+:host ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: whitesmoke;
+}
+
+.mat-snack-bar-container {
+  justify-content: center !important;
+  position: relative;
+  z-index: 20000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  margin: 24px;
+  max-width: 40vw;
+  min-width: 344px;
+  padding: 14px 16px;
+  min-height: 48px;
+  transform-origin: center;
+  color: hsla(0, 0%, 100%, 0.7);
+  background: #323232;
+}
+
+input #classroomName {
+  width: 100%;
+}
+
 :host ::ng-deep .clsForm .mat-button.mat-success,
 .mat-stroked-button.mat-success {
-  margin-left: 3.8vw;
+  width: 100%;
   margin-top: 5px;
   padding: 0 0.75em 0 0.75em;
   color: whitesmoke;
   transition: 0.3s;
   border: 2px solid goldenrod;
-  font-size: 1.85em;
+  font-size: 1.4em;
 }
 .mat-button.mat-success:hover,
 .mat-stroked-button.mat-success:hover {
   background-color: goldenrod;
 }
 
-// ::ng-deep .mat-stroked-button {
-//   height: 66px;
-//   width: 20vw;
-
-// }
-
 .logBut {
-  width: 24.3vw;
-  height: 66px;
+  width: 16vw;
+  height: 35px;
+}
+
+@media screen and (max-width: 1056px) {
+  .div-button {
+    margin: 10px;
+  }
 }

@@ -1,28 +1,24 @@
-@import "~bootstrap/dist/css/bootstrap.css";
+// @import "~bootstrap/dist/css/bootstrap.css";
 @import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Niconne&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 $bg-primary: #03b2cb;
-$bg-secondary: #03b2cb;
-// $bg-secondary: rgba(233, 240, 240, 0.9);
 $primary-color: whitesmoke;
 $secondary-color: rgba(0, 0, 0, 0.6);
 $body-primary: whitesmoke;
 $h1-font: 24px;
 $h2-font: 20px;
-$first-font: 18px;
-$secondary-font: 16px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html,
 body {
   height: 100%;
-  width: 100vw !important;
-}
-
-table.table {
-  color: $primary-color;
-}
-
-body {
+  width: 100% !important;
+  overflow-x: hidden !important;
   background: rgb(0, 25, 54);
   background: linear-gradient(
     90deg,
@@ -31,16 +27,11 @@ body {
     rgba(0, 25, 54, 1) 100%
   );
   color: $body-primary;
-  margin: 0 auto;
 }
 
-// p {
-//     font-family: 'Niconne', cursive;
-//     font-size: 2em;
-//     letter-spacing: 0.1em;
-//     text-align: justify;
-//     margin: 5px 10px;
-// }
+table.table {
+  color: $primary-color;
+}
 
 h1 {
   font-size: $h1-font;
@@ -50,33 +41,43 @@ h2 {
   font-size: $h2-font;
 }
 
-// .container,
-// .container-fluid,
-// .container-xxl,
-// .container-xl,
-// .container-lg,
-// .container-md,
-// .container-sm {
-//   padding: 0 !important;
-// }
+.mat-paginator {
+  width: 100%;
+}
 
-.header {
-  background-color: $bg-secondary;
-  // width: 100%;
-  height: 3em;
-  line-height: 3em;
-  margin: 0 0 10px 0;
-  padding: 0;
+.mat-snack-bar-container {
+  justify-content: center !important;
+  position: relative;
+  z-index: 20000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  margin: 24px;
+  max-width: 40vw;
+  min-width: 344px;
+  padding: 14px 16px;
+  min-height: 48px;
+  transform-origin: center;
+  color: hsla(0, 0%, 100%, 0.7);
+  background: #323232;
+}
+
+.navbar-bg {
+  background-color: $bg-primary;
+}
+
+.align-items-center {
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-head {
   ul {
     list-style-type: none;
     display: flex;
     li a {
       color: $primary-color;
-      font-size: $h1-font;
+      // font-size: $h1-font;
       font-weight: bold;
       font-family: sans-serif;
       text-transform: uppercase;
@@ -89,7 +90,6 @@ h2 {
 
     li a:hover {
       color: $secondary-color;
-      // transform: translateY(0) scale(2);
     }
   }
   span {
@@ -103,24 +103,68 @@ h2 {
       text-transform: uppercase;
       letter-spacing: 0.1em;
       text-align: center;
-      // margin: 1em;
       transition: 0.4s;
       text-decoration: none;
+      cursor: pointer;
     }
     a:hover {
-      color: $secondary-color;
-      // transform: translateY(0) scale(1.3);
+      color: $secondary-color !important;
     }
   }
 }
 
-.footer {
-  @extend .header;
-  margin: 0;
-  clear: both;
-  position: fixed;
-  bottom: 0;
+.page-layout-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.page-layout-row {
+  display: flex;
+  width: 97%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-layout-col {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+}
+
+.page-layout-row-1 {
+  display: flex;
+  min-height: 150px;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.page-layout-row-2 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.page-layout-left {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-layout-right {
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #wrap {
@@ -131,7 +175,22 @@ html,
 body {
   height: 100%;
 }
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+@media screen and (max-width: 1056px) {
+  .page-layout-container > .page-layout-row .wrap {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  #div-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 16px;
+  }
 }

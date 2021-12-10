@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { Observable, throwError } from "rxjs";
+import { catchError } from "rxjs/operators";
 import { IClassName } from "../interfaces/iclass-name";
 import { IclassRooms } from "../interfaces/iclass-rooms";
 
@@ -16,7 +18,8 @@ export class ClassRoomService {
     }),
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private _snackBar: MatSnackBar) {}
+  validMessage: string = "";
 
   getClassRoomByID(id): Observable<IClassName> {
     return this.http.get<IClassName>(this.apiURL + "cls/" + id);
@@ -43,10 +46,35 @@ export class ClassRoomService {
   }
 
   assignStd(details): Observable<IclassRooms> {
-    return this.http.post<IclassRooms>(
-      this.apiURL + "clase",
-      JSON.stringify(details),
-      this.httpHeaders
-    );
+    return this.http
+      .post<IclassRooms>(
+        this.apiURL + "clase",
+        JSON.stringify(details),
+        this.httpHeaders
+      )
+      .pipe(catchError(this.handleError.bind(this)));
+  }
+
+  // Error handling
+  handleError(error: any) {
+    let errorMessage = "";
+    if (error.error instanceof ErrorEvent) {
+      // Get client-side error
+      errorMessage = error.error.message;
+    } else {
+      // Get server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    this.validMessage = errorMessage;
+    this.openSnackBar();
+    return throwError(errorMessage);
+  }
+
+  openSnackBar() {
+    this._snackBar.open(this.validMessage, "", {
+      horizontalPosition: "center",
+      verticalPosition: "bottom",
+      duration: 5000,
+    });
   }
 }

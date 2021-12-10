@@ -1,14 +1,9 @@
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { MatSort } from "@angular/material/sort";
 import { MatPaginator } from "@angular/material/paginator";
-import {
-  MatSnackBar,
-  MatSnackBarHorizontalPosition,
-  MatSnackBarVerticalPosition,
-} from "@angular/material/snack-bar";
+import { MatSnackBar } from "@angular/material/snack-bar";
 import { MatTable, MatTableDataSource } from "@angular/material/table";
-import { forkJoin, Subscription } from "rxjs";
-import { take } from "rxjs/operators";
+import { Subscription } from "rxjs";
 import { Student } from "src/app/classes/student";
 import { IclassRooms } from "src/app/interfaces/iclass-rooms";
 import { ClassRoomService } from "src/app/services/class-room.service";
@@ -26,14 +21,7 @@ export class StudentsComponent implements OnInit, OnDestroy {
   paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false })
   sort!: MatSort;
-  displayedColumns: string[] = [
-    "id",
-    "nume",
-    "email",
-    "password",
-    "actions",
-    // 'classa',
-  ];
+  displayedColumns: string[] = ["id", "nume", "email", "password", "actions"];
   selectedStudent: Student = new Student();
   isVisible = false;
   addUserView = false;
@@ -79,37 +67,6 @@ export class StudentsComponent implements OnInit, OnDestroy {
         console.error(err);
       }
     );
-
-    // const studentsDetails = [
-    //   this.studentsService.getStudents(),
-    //   this.classroomService.getAllClassRooms(),
-    // ];
-    // forkJoin(studentsDetails)
-    //   .pipe(take(1))
-    //   .subscribe(
-    //     (data) => {
-    //       this.studentsData = data[0];
-    //       this.studentsData.forEach((student) => {
-    //         data[1].forEach((classroom) => {
-    //           if (student.id === classroom.ElevID) {
-    //             student.className = classroom.numeClasa;
-    //             console.log("Console log din subscribe: ");
-    //             console.log(student);
-    //             console.log("\n");
-    //           }
-    //         });
-    //       });
-    //       this.listData = new MatTableDataSource(this.studentsData);
-    //       this.listData.sort = this.sort;
-    //       this.listData.paginator = this.paginator;
-    //       console.log("console log dupa populare mat-table: ");
-    //       console.log(this.studentsData);
-    //       console.log("\n");
-    //     },
-    //     (err) => {
-    //       console.log(err);
-    //     }
-    //   );
   }
   showDetails(student: Student) {
     this.isVisible = true;

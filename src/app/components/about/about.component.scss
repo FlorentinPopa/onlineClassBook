@@ -1,0 +1,276 @@
+.page-layout-row:nth-child(2) {
+  margin-top: 40px;
+}
+.marg {
+  margin: 10px;
+  display: flex !important;
+  align-self: flex-start !important;
+  p {
+    margin-right: 10px !important;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .bord {
+    min-height: 24rem;
+    border-right: 2px dashed whitesmoke;
+  }
+}
+
+.icoBg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: goldenrod;
+  border-radius: 50%;
+}
+:host ::ng-deep .mat-icon {
+  width: 72px;
+  height: 72px;
+}
+.icon {
+  text-align: center;
+  font-size: 72px;
+  color: whitesmoke;
+}
+
+.page-layout-rowA {
+  display: flex;
+  width: 97%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-layout-colA {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  p {
+    text-align: justify;
+  }
+}
+
+.pages-layout-container .ads_beneficii_elevi .elev-img {
+  background: url(http://www.adservio.ro/images/site/despre-adservio/despre-adservio-elevi.png)
+    no-repeat;
+  height: 499px;
+  width: 361px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.maxwrapp {
+  max-width: 144000px;
+  min-height: 360px;
+  position: relative;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+.context {
+  max-width: 65%;
+  display: block;
+  margin: 0 auto;
+  padding: 20px 40px;
+  float: left;
+}
+
+h3 {
+  color: whitesmoke;
+  text-align: left;
+}
+
+.pages-layout-container .ads_beneficii_elevi .maxwrapp .context h3 {
+  color: whitesmoke;
+  text-align: left;
+  font-size: 36px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+.list_style li {
+  padding-left: 0.5em;
+  text-indent: -0.5em;
+}
+.list_style li:before {
+  content: "\2022";
+  padding-right: 2px;
+}
+
+.pages-layout-container .ads_beneficii_elevi {
+  text-align: justify;
+  min-height: 360px;
+  background: #03b2cb;
+  color: whitesmoke;
+  margin: 50px 0;
+  //   height: 100%;
+  font-family: "Open Sans", "Lucida Sans Unicode", Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.3em;
+  -webkit-text-size-adjust: none;
+}
+
+.pages-layout-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // height: 80%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.pages-layout-container .ads_beneficii_cadre {
+  min-height: 360px;
+  background: #03b2cb;
+  color: whitesmoke;
+  margin: 40px 0;
+  font-family: "Open Sans", "Lucida Sans Unicode", Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.3em;
+  -webkit-text-size-adjust: none;
+}
+
+.pages-layout-container .ads_beneficii_cadre .maxwrap {
+  max-width: 1440px;
+  min-height: 360px;
+  position: relative;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+.pages-layout-container .ads_beneficii_cadre .context {
+  max-width: 65%;
+  display: block;
+  margin: 0 auto;
+  padding: 20px 40px;
+  float: right;
+}
+
+.pages-layout-container .ads_beneficii_cadre h3 {
+  color: whitesmoke;
+  text-align: left;
+}
+
+h3 {
+  margin: 10px 0 20px;
+  color: #000;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1em;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .pages-layout-container .page-layout-row {
+    display: block;
+    .bord {
+      border: none;
+    }
+  }
+  .mat-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    background-color: transparent;
+  }
+  .icoBg {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    background-color: transparent;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .pages-layout-container .ads_beneficii_cadre .cadru-img {
+    left: -34px;
+  }
+}
+
+.pages-layout-container .ads_beneficii_cadre .cadru-img {
+  background: url(http://www.adservio.ro/images/site/despre-adservio/despre-adservio-profesori.png)
+    no-repeat;
+  height: 401px;
+  width: 446px;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .pages-layout-container .ads_beneficii_cadre .context {
+    float: none;
+    padding: 20px 20px 0 20px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 768px) {
+  .pages-layout-container .ads_beneficii_cadre .context,
+  .pages-layout-container .ads_beneficii_elevi .maxwrapp,
+  .pages-layout-container .ads_beneficii_parinti,
+  .pages-layout-container .ads_beneficii_unitate,
+  .pages-layout-container .ads_pentrutine .middleblock,
+  .pages-layout-container .ads_sigur .middleblock,
+  .pages-layout-container .ads_usor .wrapp {
+    width: 90%;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .pages-layout-container .ads_beneficii_elevi {
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .pages-layout-container .ads_beneficii_elevi .context {
+    float: none;
+    max-width: 100%;
+    display: block;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pages-layout-container .ads_beneficii_elevi .elev-img {
+    background: url(http://www.adservio.ro/images/site/despre-adservio/elev-mic.png)
+      no-repeat;
+    width: 146px;
+    height: 200px;
+    display: block;
+    position: inherit;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .pages-layout-container .ads_beneficii_cadre .cadru-img {
+    background: url(http://www.adservio.ro/images/site/despre-adservio/profesoara-mic.png)
+      no-repeat;
+    width: 167px;
+    height: 150px;
+    display: block;
+    position: inherit;
+    margin: 0 auto;
+  }
+}

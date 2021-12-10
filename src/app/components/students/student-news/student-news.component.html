@@ -1,42 +1,70 @@
-<p>News</p>
-<div class="row">
-  <div class="col-6" *ngFor="let oneNews of newsFeed">
-    <div class="card mb-3" style="max-width: 640px; height: 280px;">
-      <div class="row g-0">
-        <div
-          class="col-md-4"
-          [ngStyle]="{'background': 'url('+ oneNews.urlToImage +') no-repeat center', 'background-size': 'cover', 'max-height': '279px'}"
-        ></div>
-        <div class="col-md-8">
-          <div class="card mb-3" style="max-width: 100%; height: 279px;">
-            <div
-              class="card-header bg-transparent border-success overflow-hidden"
-            >
-              <a [href]="oneNews.url" class="text-decoration-none"
-                >{{oneNews.title}}</a
-              >
-            </div>
-            <div class="card-body text-wrap overflow-hidden">
-              <!-- <h5 class="card-title">Success card title</h5> -->
-              <p class="card-text p-content">{{oneNews.description}}</p>
-            </div>
-            <div class="card-footer bg-transparent border-success">
-              <small class="text-muted">posted by: {{oneNews.author}}</small>
-            </div>
-          </div>
-          <!-- <div class="card-body">
-            <div class="card-header bg-transparent border-success body-content">
-              <h2 class="card-title">{{oneNews.title}}</h2>
-            </div>
-            <p class="p-content card-text">{{oneNews.description}}</p>
-            <div class="footerX card-footer bg-transparent border-success">
-              <p class="card-text">
-                <small class="text-muted">posted by: {{oneNews.author}}</small>
-              </p>
-            </div>
-          </div> -->
-        </div>
+<div class="container-fluid">
+  <div class="row mt-3">
+    <div class="col-12">
+      <div class="search-div">
+        <mat-form-field class="search-form-field" floatLabel="never">
+          <input
+            matInput
+            (keyup)="applyFilter(getEventValue($event))"
+            placeholder="Cautare dupa titlu"
+            autocomplete="off"
+            [(ngModel)]="filter"
+          />
+          <button
+            mat-button
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            *ngIf="searchKey"
+            (click)="onSearchClear()"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
       </div>
     </div>
+  </div>
+  <div class="row">
+    <div
+      class="col-lg-3 col-md-4 col-sm-12 mt-3"
+      *ngFor="let book of obs | async"
+    >
+      <mat-card class="example-card align-self-center">
+        <mat-card-header>
+          <div
+            mat-card-avatar
+            [ngStyle]="{'background': 'url('+ book.prodCoverUrl +') no-repeat center', 'background-size': 'cover'}"
+          ></div>
+          <mat-card-title
+            class="noOverflow"
+            [ngClass]="{'noAuthors': !book.autori}"
+            >{{book.prodNume}}</mat-card-title
+          >
+          <mat-card-subtitle *ngIf="book.autori"
+            >{{book.autori[0].autNumeFull}}</mat-card-subtitle
+          >
+        </mat-card-header>
+        <img
+          mat-card-image
+          [src]="book.prodCoverUrl"
+          [alt]="book.prodNume"
+          class="image-card"
+        />
+        <mat-card-content>
+          <p class="p-content">{{book.prodDescriere}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div class="container-fluid w-100 mt-3">
+    <mat-paginator
+      [pageSizeOptions]="[12, 24, 48]"
+      aria-label="Select page"
+      [pageSize]="12"
+    ></mat-paginator>
   </div>
 </div>

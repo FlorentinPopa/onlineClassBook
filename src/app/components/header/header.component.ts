@@ -1,12 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
+import { AuthService } from "src/app/guard/auth.service";
+import { Session } from "src/app/guard/session";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  @Input()
+  session: Session;
+  constructor(public authService: AuthService) {}
 
-  ngOnInit(): void {}
+  isLoggedIn: boolean = !!localStorage.getItem("currentUser");
+
+  ngOnInit(): void {
+    this.session = new Session();
+  }
+
+  logout() {
+    this.session.logout();
+  }
 }

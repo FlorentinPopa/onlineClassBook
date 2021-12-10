@@ -1,77 +1,85 @@
-<div class="row w-100">
-  <div class="col-md-8">
-    <div class="row">
-      <h1 class="m-5">
+<div class="home-container">
+  <div class="home-left">
+    <div class="home-title">
+      <h1>
         Tehnologie la clasa<br />
         Tehnologie acasa
       </h1>
     </div>
-    <div class="row">
-      <div class="col-md-7">
-        <ul>
-          <li>
-            <span class="material-icons md-36"> dynamic_form </span
-            ><span class="text">Implementare în 24h</span>
-          </li>
-          <li>
-            <span class="material-icons md-36"> dvr </span
-            ><span class="text">Training gratuit</span>
-          </li>
-          <li>
-            <span class="material-icons md-36">settings_phone</span>
-            <span class="text">Specialist Relații Clienți dedicat</span>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-5">
-        <ul>
-          <li>
-            <span class="material-icons md-36">cable</span>
-            <span class="text">Plan financiar flexibil</span>
-          </li>
-          <li>
-            <span class="material-icons md-36">question_answer</span>
-            <span class="text">Suport constant</span>
-          </li>
-          <li>
-            <span class="material-icons md-36">info</span>
-            <span class="text">Info și tutoriale video</span>
-          </li>
-        </ul>
-      </div>
+    <div class="home-subtitle">
+      <ul>
+        <li>
+          <span class="material-icons md-36"> dynamic_form </span
+          ><span class="text">Implementare în 24h</span>
+        </li>
+        <li>
+          <span class="material-icons md-36"> dvr </span
+          ><span class="text">Training gratuit</span>
+        </li>
+        <li>
+          <span class="material-icons md-36">settings_phone</span>
+          <span class="text">Specialist Relații Clienți dedicat</span>
+        </li>
+      </ul>
+
+      <ul class="pLeft">
+        <li>
+          <span class="material-icons md-36">cable</span>
+          <span class="text">Plan financiar flexibil</span>
+        </li>
+        <li>
+          <span class="material-icons md-36">question_answer</span>
+          <span class="text">Suport constant</span>
+        </li>
+        <li>
+          <span class="material-icons md-36">info</span>
+          <span class="text">Info și tutoriale video</span>
+        </li>
+      </ul>
     </div>
   </div>
-  <div class="col-md-4 align-self-center">
-    <div class="row">
-      <p class="text-center login">
+  <div class="home-right">
+    <div class="login-text">
+      <p class="align-items-center text-center">
         <span class="material-icons">
           key
         </span>
         Access utilizatori
       </p>
     </div>
-    <div class="row margin-form">
-      <form class="homeForm">
-        <div class="row">
-          <div class="col-10">
-            <mat-form-field appearance="outline" class="homeForm">
-              <mat-label class="homeForm">E-mail</mat-label>
-              <mat-icon matPrefix class="m-2">email</mat-icon>
-              <input name="email" matInput class="homeForm" />
-            </mat-form-field>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-10">
-            <mat-form-field appearance="outline" class="homeForm">
-              <mat-label class="homeForm">Parola</mat-label>
-              <mat-icon matPrefix class="m-2">lock</mat-icon>
-              <input name="password" matInput class="homeForm" />
-            </mat-form-field>
-          </div>
-        </div>
-        <button mat-stroked-button color="success" class="logBut homeForm">
-          Autentificare utilizatori !
+    <div class="login-form">
+      <form class="homeForm text-center">
+        <mat-form-field appearance="outline" class="homeForm">
+          <mat-label class="homeForm">E-mail</mat-label>
+          <mat-icon matPrefix class="m-2">email</mat-icon>
+          <input
+            name="email"
+            [(ngModel)]="authService.email"
+            matInput
+            class="homeForm"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="homeForm">
+          <mat-label class="homeForm">Parola</mat-label>
+          <mat-icon matPrefix class="m-2">lock</mat-icon>
+          <input
+            type="password"
+            name="password"
+            [(ngModel)]="authService.password"
+            matInput
+            class="homeForm"
+          />
+        </mat-form-field>
+
+        <button
+          mat-stroked-button
+          color="success"
+          class="logBut homeBtn"
+          (click)="authService.signIn()"
+        >
+          <mat-icon matPrefix class="m-2">login</mat-icon>
+          <div class="d-inline-flex">Login</div>
         </button>
       </form>
     </div>

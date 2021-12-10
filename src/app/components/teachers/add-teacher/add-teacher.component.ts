@@ -39,8 +39,6 @@ export class AddTeacherComponent implements OnInit {
     } else {
       this.teacherService.addTch(this.teacherDetails).subscribe(
         (data) => {
-          console.log(data);
-          console.log(this.teacherDetails);
           this.reload();
         },
         (err) => {

@@ -1,79 +1,16 @@
 h1 {
   font-family: "Allerta Stencil", sans-serif;
-  font-size: 4.8em;
+  font-size: 3.8em;
   cursor: default;
-}
-
-.example-form {
-  min-width: 250px;
-  max-width: 500px;
-  width: 100%;
-}
-
-.example-full-width {
-  width: 100%;
-}
-
-.material-icons {
-  font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px; /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  cursor: default;
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: "liga";
-}
-/* Rules for sizing the icon. */
-.material-icons.md-18 {
-  font-size: 18px;
-}
-.material-icons.md-24 {
-  font-size: 24px;
-}
-.material-icons.md-36 {
-  font-size: 36px;
-}
-.material-icons.md-48 {
-  font-size: 48px;
-}
-
-/* Rules for using icons as black on a light background. */
-.material-icons.md-dark {
-  color: rgba(0, 0, 0, 0.54);
-}
-.material-icons.md-dark.md-inactive {
-  color: rgba(0, 0, 0, 0.26);
-}
-
-/* Rules for using icons as white on a dark background. */
-.material-icons.md-light {
-  color: rgba(255, 255, 255, 1);
-}
-.material-icons.md-light.md-inactive {
-  color: rgba(255, 255, 255, 0.3);
-}
-
-.margin-form {
-  margin-right: 30px !important;
+  margin: 48px;
 }
 
 ul {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
   li {
     margin-top: 1.7em;
   }
@@ -82,7 +19,7 @@ ul {
     margin-left: 5px;
     height: 38px;
     line-height: 38px;
-    font-size: 32px;
+    font-size: 1.6em;
     vertical-align: top;
     font-weight: normal;
     font-style: normal;
@@ -95,19 +32,10 @@ ul {
   }
 }
 
-.login {
-  font-family: "Allerta Stencil", sans-serif !important;
-  font-size: 32px;
-  color: goldenrod;
-}
-.borderX {
-  border-top: 5px double goldenrod;
-  border-bottom: 5px double goldenrod;
-}
-
 :host ::ng-deep .homeForm {
   .mat-form-field-appearance-outline .mat-form-field-outline {
     color: white;
+    width: 100%;
   }
   mat-form-field {
     .mat-hint,
@@ -121,21 +49,19 @@ ul {
     color: goldenrod !important;
   }
 
+  .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    width: 23vw;
+  }
+
   .mat-form-field {
     .mat-form-field-infix {
       height: 66px;
-      width: 20vw;
+      width: 40%;
     }
   }
-  .mat-form-field {
-    margin-left: 3.8vw;
-  }
-}
-
-/* input color class */
-:host ::ng-deep .homeForm input.mat-input-element {
-  color: rgba(0, 0, 0, 0.6) !important;
-  font-size: 1.1rem;
+  // .mat-form-field {
+  //   margin-left: 3.8vw;
+  // }
 }
 
 /* Change label color on focused */
@@ -144,28 +70,142 @@ ul {
   font-weight: bolder;
 }
 
+/* input color class */
+:host ::ng-deep .homeForm input.mat-input-element {
+  color: rgba(0, 0, 0, 0.6) !important;
+  font-size: 1.1rem;
+}
+
 :host ::ng-deep .homeForm .mat-button.mat-success,
 .mat-stroked-button.mat-success {
-  margin-left: 3.8vw;
+  // margin-left: 3.8vw;
   margin-top: 5px;
-  padding: 0 0.75em 0 0.75em;
   color: whitesmoke;
   transition: 0.3s;
   border: 2px solid goldenrod;
-  font-size: 1.85em;
+  font-size: 1.55em;
+  height: 66px;
+  width: 23vw;
+  font-weight: 400;
 }
+
 .mat-button.mat-success:hover,
 .mat-stroked-button.mat-success:hover {
   background-color: goldenrod;
 }
 
-// ::ng-deep .mat-stroked-button {
-//   height: 66px;
-//   width: 20vw;
+.home-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
 
-// }
+.home-left {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-.logBut {
-  width: 24.3vw;
-  height: 66px;
+.home-right {
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-subtitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.login-text {
+  font-family: "Allerta Stencil", sans-serif !important;
+  font-size: 28px;
+  color: goldenrod;
+}
+
+@media screen and (min-width: 1440px) {
+  .login-text {
+    font-size: 34px;
+  }
+  h1 {
+    font-size: 4.8em;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .login-text {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 2.6em;
+    margin: 0;
+  }
+  ul {
+    li span.text {
+      margin-left: 5px;
+      height: 24px;
+      line-height: 24px;
+      font-size: 0.95em;
+    }
+  }
+
+  :host ::ng-deep .homeForm {
+    .mat-form-field {
+      .mat-form-field-infix {
+        height: 42px;
+      }
+    }
+  }
+
+  /* input color class */
+  :host ::ng-deep .homeForm input.mat-input-element {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+
+  :host ::ng-deep .homeForm .mat-button.mat-success,
+  .mat-stroked-button.mat-success {
+    height: 42px;
+    margin-top: 1px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home-left {
+    display: none;
+  }
+  .home-right {
+    width: 100%;
+    flex-direction: column;
+  }
+  .homeForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  :host ::ng-deep .homeForm .mat-button.mat-success,
+  .mat-stroked-button.mat-success {
+    width: 60vw;
+    height: 66px;
+  }
+
+  :host
+    ::ng-deep
+    .homeForm
+    .mat-form-field-appearance-outline
+    .mat-form-field-wrapper {
+    width: 60vw;
+  }
+
+  #homeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

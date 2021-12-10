@@ -1,43 +1,18 @@
-<div class="container-fluid">
-  <div class="row mb-5">
-    <div class="col">
-      <button (click)="addStd()" mat-stroked-button color="success">
-        Add Student
-      </button>
-    </div>
+<div class="page-layout-container">
+  <div class="page-layout-row-1">
+    <button (click)="addStd()" mat-stroked-button color="success">
+      Add Student
+    </button>
   </div>
-  <!-- </div>
-  <hr />
-  <!-- <div class="search-div">
-<button mat-raised-button><mat-icon>add</mat-icon>Create</button>
-<mat-form-field class="search-form-field" floatLabel="never">
-  <input
-    matInput
-    (keyup)="applyFilter(getEventValue($event))"
-    placeholder="Search"
-    autocomplete="off"
-  />
-  <button
-    mat-button
-    matSuffix
-    mat-icon-button
-    aria-label="Clear"
-    *ngIf="searchKey"
-    (click)="onSearchClear()"
-  >
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
-</div> -->
-  <div class="row">
-    <div class="col-6">
+  <div class="page-layout-row-2">
+    <div class="page-layout-left mx-3">
       <table mat-table #table [dataSource]="listData" matSort>
         <!-- Position Column -->
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Elev Id</th>
           <td mat-cell *matCellDef="let elev">{{elev.id}}</td>
         </ng-container>
-        <!-- Category Column -->
+        <!-- Name Column -->
         <ng-container matColumnDef="nume">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Nume Elev</th>
           <td mat-cell *matCellDef="let elev">{{elev.nume}}</td>
@@ -95,10 +70,16 @@
           [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"
         ></mat-footer-row>
       </table>
-      <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10]">
-      </mat-paginator>
+      <mat-paginator
+        #paginator
+        [pageSize]="5"
+        [pageSizeOptions]="[5, 10]"
+      ></mat-paginator>
     </div>
-    <div class="col-6">
+    <div
+      *ngIf="addUserView || studentGrd || isVisible"
+      class="page-layout-right"
+    >
       <app-add-student *ngIf="addUserView"></app-add-student>
       <app-student-grades
         *ngIf="studentGrd"

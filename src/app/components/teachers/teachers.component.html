@@ -1,94 +1,97 @@
-<div class="row mb-5">
-  <div class="col">
+<div class="page-layout-container">
+  <div class="page-layout-row-1">
     <button (click)="addTch()" mat-stroked-button color="success">
       Add Teacher
     </button>
   </div>
-</div>
-<div class="row w-100">
-  <div class="col-7">
-    <table mat-table #table [dataSource]="listTchData" matSort>
-      <!-- Position Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>profesor Id</th>
-        <td mat-cell *matCellDef="let profesor">{{profesor.id}}</td>
-      </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Nume</th>
-        <td mat-cell *matCellDef="let profesor">{{profesor.name}}</td>
-      </ng-container>
-      <!-- Materie Column -->
-      <ng-container matColumnDef="materie">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          Materia Predata
-        </th>
-        <td mat-cell *matCellDef="let profesor">{{profesor.materie}}</td>
-      </ng-container>
-      <!-- Email Column -->
-      <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
-        <td mat-cell *matCellDef="let profesor">{{profesor.email}}</td>
-      </ng-container>
+  <div class="page-layout-row-2">
+    <div class="page-layout-left">
+      <table mat-table #table [dataSource]="listTchData" matSort>
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>profesor Id</th>
+          <td mat-cell *matCellDef="let profesor">{{profesor.id}}</td>
+        </ng-container>
 
-      <!-- Clasa Column -->
-      <ng-container matColumnDef="password">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Parola</th>
-        <td mat-cell *matCellDef="let profesor">{{profesor.password}}</td>
-      </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Nume</th>
+          <td mat-cell *matCellDef="let profesor">{{profesor.name}}</td>
+        </ng-container>
+        <!-- Materie Column -->
+        <ng-container matColumnDef="materie">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Materia Predata
+          </th>
+          <td mat-cell *matCellDef="let profesor">{{profesor.materie}}</td>
+        </ng-container>
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+          <td mat-cell *matCellDef="let profesor">{{profesor.email}}</td>
+        </ng-container>
 
-      <ng-container matColumnDef="actions">
-        <mat-header-cell *matHeaderCellDef></mat-header-cell>
-        <mat-cell *matCellDef="let profesor">
-          <button mat-icon-button (click)="showDetails(profesor)">
-            <mat-icon>launch</mat-icon>
-          </button>
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let profesor">
+            <button
+              *ngIf="profesor.id === tchByID.id"
+              mat-icon-button
+              (click)="showDetails(profesor)"
+            >
+              <mat-icon>launch</mat-icon>
+            </button>
 
-          <button mat-icon-button color="warn">
-            <mat-icon>delete_outline</mat-icon>
-          </button>
-        </mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="loading">
-        <mat-footer-cell *matFooterCellDef colspan="6">
-          Loading data...
-        </mat-footer-cell>
-      </ng-container>
-      <ng-container matColumnDef="noData">
-        <mat-footer-cell *matFooterCellDef colspan="6">
-          No data.
-        </mat-footer-cell>
-      </ng-container>
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr
-        mat-row
-        *matRowDef="let row; columns: displayedColumns; let i = index;"
-      ></tr>
-      <mat-footer-row
-        *matFooterRowDef="['loading']"
-        [ngClass]="{'hide':listTchData!=null}"
-      ></mat-footer-row>
-      <mat-footer-row
-        *matFooterRowDef="['noData']"
-        [ngClass]="{'hide':!(listTchData!=null && listTchData.data.length==0)}"
-      ></mat-footer-row>
-    </table>
-    <mat-paginator
-      #paginator
-      [length]="listTchData.data.length"
-      [pageIndex]="0"
-      [pageSize]="5"
-      [pageSizeOptions]="[5, 10]"
-    >
-    </mat-paginator>
-  </div>
-  <div class="col-4">
-    <app-add-teacher *ngIf="teacherView"></app-add-teacher>
-    <app-teacher-details
-      *ngIf="isVisible"
-      [teacher]="selectedTeacher"
-      (teacherChange)="update($event)"
-    ></app-teacher-details>
+            <button
+              *ngIf="profesor.id === tchByID.id"
+              mat-icon-button
+              color="warn"
+            >
+              <mat-icon>delete_outline</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="loading">
+          <mat-footer-cell *matFooterCellDef colspan="6">
+            Loading data...
+          </mat-footer-cell>
+        </ng-container>
+        <ng-container matColumnDef="noData">
+          <mat-footer-cell *matFooterCellDef colspan="6">
+            No data.
+          </mat-footer-cell>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: displayedColumns; let i = index;"
+        ></tr>
+        <mat-footer-row
+          *matFooterRowDef="['loading']"
+          [ngClass]="{'hide':listTchData!=null}"
+        ></mat-footer-row>
+        <mat-footer-row
+          *matFooterRowDef="['noData']"
+          [ngClass]="{'hide':!(listTchData!=null && listTchData.data.length==0)}"
+        ></mat-footer-row>
+      </table>
+      <mat-paginator
+        #paginator
+        [length]="listTchData.data.length"
+        [pageIndex]="0"
+        [pageSize]="5"
+        [pageSizeOptions]="[5, 10]"
+      >
+      </mat-paginator>
+    </div>
+    <div *ngIf="teacherView || isVisible" class="page-layout-right">
+      <app-add-teacher *ngIf="teacherView"></app-add-teacher>
+      <app-teacher-details
+        *ngIf="isVisible"
+        [teacher]="selectedTeacher"
+        (teacherChange)="update($event)"
+      ></app-teacher-details>
+    </div>
   </div>
 </div>

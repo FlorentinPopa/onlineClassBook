@@ -1,5 +1,4 @@
 <form>
-  <!-- <p>Profesor Nr : {{teacher.id}}</p> -->
   <div class="row">
     <div class="col-10">
       <mat-form-field appearance="legacy">
@@ -10,7 +9,6 @@
           matInput
           placeholder="Ex. Dinca Roxana"
         />
-        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
       </mat-form-field>
     </div>
     <div class="row">
@@ -23,7 +21,6 @@
             matInput
             placeholder="Ex. Romana"
           />
-          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         </mat-form-field>
       </div>
     </div>
@@ -31,7 +28,6 @@
       <div class="col-10">
         <mat-form-field appearance="legacy">
           <mat-label>E-mail</mat-label>
-          <!-- <mat-icon matPrefix>alternate_email</mat-icon> -->
           <input
             [(ngModel)]="teacher.email"
             name="email"
@@ -51,7 +47,6 @@
             matInput
             placeholder="Ex. parolamea123"
           />
-          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         </mat-form-field>
       </div>
     </div>
@@ -60,12 +55,3 @@
     Update teacher {{teacher.id}} !
   </button>
 </form>
-
-<!-- 
-<p>Profesor Nr : {{teacher.id}}</p>
-<p>Nume : <input [(ngModel)]="teacher.name" /></p>
-<p>Materie : <input [(ngModel)]="teacher.materie" /></p>
-<p>Email : <input [(ngModel)]="teacher.email" /></p>
-<p>Parola : <input [(ngModel)]="teacher.password" /></p>
-
-<button (click)="update()">Update</button> -->

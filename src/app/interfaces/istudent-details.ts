@@ -3,5 +3,4 @@ export interface IstudentDetails {
   numeMaterie: string;
   nume: string;
   name: string;
-  data: string;
 }

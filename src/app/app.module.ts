@@ -19,18 +19,19 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { HomeComponent } from "./components/home/home.component";
 import { StudentNewsComponent } from "./components/students/student-news/student-news.component";
 import { HttpClientModule } from "@angular/common/http";
-import { StudentsComponent } from "./components/students/student-news/students/students.component";
+import { StudentsComponent } from "./components/students/students/students.component";
 import { AddClassroomComponent } from "./components/add-classroom/add-classroom.component";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import { TeachersComponent } from "./components/teachers/teachers.component";
 import { StudentDetailsComponent } from "./components/students/student-details/student-details.component";
 import { MatDialogModule } from "@angular/material/dialog";
-import { TeacherDetailsComponent } from "./components/teacher-details/teacher-details.component";
+import { TeacherDetailsComponent } from "./components/teachers/teacher-details/teacher-details.component";
 import { GradeComponent } from "./components/grade/grade.component";
 import { StudentGradesComponent } from "./components/students/student-grades/student-grades.component";
 import { AddStudentComponent } from "./components/students/add-student/add-student.component";
 import { AddTeacherComponent } from "./components/teachers/add-teacher/add-teacher.component";
+import { AboutComponent } from "./components/about/about.component";
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { AddTeacherComponent } from "./components/teachers/add-teacher/add-teach
     StudentGradesComponent,
     AddStudentComponent,
     AddTeacherComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
