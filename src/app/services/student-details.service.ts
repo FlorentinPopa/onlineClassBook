@@ -13,7 +13,7 @@ export class StudentDetailsService {
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) {}
 
   validMessage: string = "";
-  apiURL = "http://sdaproject.tk/";
+  apiURL = "http://sdaproject.tk/api/";
 
   httpHeaders = {
     headers: new HttpHeaders({

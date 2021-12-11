@@ -9,5 +9,7 @@ import { AuthService } from "src/app/guard/auth.service";
 export class HomeComponent implements OnInit {
   constructor(public authService: AuthService) {}
 
+  isLoggedIn: boolean = !!localStorage.getItem("currentUser");
+
   ngOnInit(): void {}
 }

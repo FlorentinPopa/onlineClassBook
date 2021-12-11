@@ -11,7 +11,7 @@ import { IStudent } from "../interfaces/istudent";
 export class StudentsService {
   constructor(private http: HttpClient) {}
 
-  apiURL = "http://sdaproject.tk/";
+  apiURL = "http://sdaproject.tk/api/";
 
   httpHeaders = {
     headers: new HttpHeaders({

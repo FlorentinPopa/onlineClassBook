@@ -137,4 +137,13 @@ input #classroomName {
   .div-button {
     margin: 10px;
   }
+  .mat-paginator {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mat-paginator {
+    width: 100%;
+  }
 }

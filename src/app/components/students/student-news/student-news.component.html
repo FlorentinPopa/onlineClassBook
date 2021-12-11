@@ -53,9 +53,12 @@
         <mat-card-content>
           <p class="p-content">{{book.prodDescriere}}</p>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
+        <mat-card-actions class="card-download">
+          <a [href]="book.prodFileUrl" target="_blank"
+            ><i class="material-icons aln">file_download</i>
+            <i class="aln">Download PDF</i></a
+          >
+          <!-- <button mat-button>SHARE</button> -->
         </mat-card-actions>
       </mat-card>
     </div>

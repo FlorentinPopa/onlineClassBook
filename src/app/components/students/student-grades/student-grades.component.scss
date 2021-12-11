@@ -25,3 +25,14 @@ tr#studentName {
   @extend .tableHeader;
   color: goldenrod;
 }
+
+@media screen and (max-width: 600px) {
+  tr#studentName {
+    th {
+      font-size: 1em;
+    }
+  }
+  .tableHeader {
+    font-size: 0.8em;
+  }
+}

@@ -10,7 +10,7 @@ import { IclassRooms } from "../interfaces/iclass-rooms";
   providedIn: "root",
 })
 export class ClassRoomService {
-  apiURL = "http://sdaproject.tk/";
+  apiURL = "http://sdaproject.tk/api/";
 
   httpHeaders = {
     headers: new HttpHeaders({

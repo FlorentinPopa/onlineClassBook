@@ -1,5 +1,6 @@
 /versiuni
 /node_modules
+/dist
 /.git
 .gitignore
 

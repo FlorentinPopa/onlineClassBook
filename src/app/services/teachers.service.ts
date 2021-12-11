@@ -9,7 +9,7 @@ import { ITeacher } from "../interfaces/iteacher";
   providedIn: "root",
 })
 export class TeachersService {
-  apiURL = "http://sdaproject.tk/";
+  apiURL = "http://sdaproject.tk/api/";
 
   httpHeaders = {
     headers: new HttpHeaders({
@@ -20,13 +20,13 @@ export class TeachersService {
 
   getAllTch(): Observable<ITeacher[]> {
     return this.http
-      .get<ITeacher[]>(this.apiURL + "Profesori", this.httpHeaders)
+      .get<ITeacher[]>(this.apiURL + "profesori", this.httpHeaders)
       .pipe(retry(1), catchError(this.handleError));
   }
 
   getTchByID(id): Observable<ITeacher> {
     return this.http
-      .get<ITeacher>(this.apiURL + "Profesori/" + id, this.httpHeaders)
+      .get<ITeacher>(this.apiURL + "profesori/" + id, this.httpHeaders)
       .pipe(retry(1), catchError(this.handleError));
   }
 
